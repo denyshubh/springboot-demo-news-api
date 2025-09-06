@@ -1,0 +1,47 @@
+# Docker-specific configuration
+server:
+  port: 8080
+  # Graceful shutdown for containers
+  shutdown: graceful
+
+spring:
+  lifecycle:
+    timeout-per-shutdown-phase: 20s
+  main:
+    banner-mode: "off"
+
+app:
+  worldnews:
+    base-url: ${APP_WORLDNEWS_BASE_URL:https://api.worldnewsapi.com}
+    api-key: ${WORLDNEWS_API_KEY:dummy}
+    timeout-ms: ${APP_WORLDNEWS_TIMEOUT_MS:10000}
+    skip-ssl-validation: ${APP_WORLDNEWS_SKIP_SSL_VALIDATION:true}
+
+# Logging configuration for containers
+logging:
+  level:
+    com.example.newsapi: INFO
+    org.springframework.web: INFO
+    reactor.netty: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  file:
+    name: /app/logs/news-api.log
+
+# Management endpoints for health checks
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: when-authorized
+      probes:
+        enabled: true
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true

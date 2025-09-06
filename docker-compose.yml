@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  news-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: news-api-app
+    ports:
+      - "8080:8080"
+    environment:
+      # Spring profiles
+      - SPRING_PROFILES_ACTIVE=docker
+      # World News API configuration
+      - WORLDNEWS_API_KEY=${WORLDNEWS_API_KEY:-your-api-key-here}
+      - APP_WORLDNEWS_BASE_URL=https://api.worldnewsapi.com
+      - APP_WORLDNEWS_TIMEOUT_MS=10000
+      - APP_WORLDNEWS_SKIP_SSL_VALIDATION=true
+      # JVM settings for container
+      - JAVA_OPTS=-XX:+UseContainerSupport -XX:MaxRAMPercentage=75.0 -XX:+UseG1GC
+    volumes:
+      # Optional: Mount logs directory for debugging
+      - ./logs:/app/logs
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/actuator/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    restart: unless-stopped
+    networks:
+      - news-api-network
+
+networks:
+  news-api-network:
+    driver: bridge
