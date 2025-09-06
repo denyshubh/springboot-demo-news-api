@@ -1,6 +1,6 @@
 # Docker Setup Guide
 
-This guide explains how to run the News API application using Docker and Docker Compose.
+This guide explains how to run the News API application using Docker and Docker Compose on Linux/macOS systems.
 
 ## Prerequisites
 

@@ -1,10 +1,11 @@
 #!/bin/bash
 
-# Test script for Docker setup
+# Test script for Docker setup - Linux/macOS
 set -e
 
 echo "🐳 Testing Docker Setup for News API"
 echo "======================================"
+echo "Platform: Linux/macOS"
 
 # Check if Docker is running
 if ! docker info > /dev/null 2>&1; then
