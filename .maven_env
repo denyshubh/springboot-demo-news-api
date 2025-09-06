@@ -1,0 +1,2 @@
+export MAVEN_HOME=/workspace/.tools/apache-maven-3.9.9
+export PATH=/bin:/home/ubuntu/.nvm/versions/node/v22.16.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
