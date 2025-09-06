@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>WorldNewsItem.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">news-api</a> &gt; <a href="index.source.html" class="el_package">com.example.newsapi.model</a> &gt; <span class="el_source">WorldNewsItem.java</span></div><h1>WorldNewsItem.java</h1><pre class="source lang-java linenums">package com.example.newsapi.model;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import java.util.List;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+<span class="fc" id="L8">public class WorldNewsItem {</span>
+    private long id;
+    private String title;
+    private String text;
+    private String summary;
+    private String url;
+    private String image;
+    private String video;
+    private String publish_date;
+    private String author;
+    private List&lt;String&gt; authors;
+
+    public long getId() {
+<span class="fc" id="L21">        return id;</span>
+    }
+
+    public void setId(long id) {
+<span class="fc" id="L25">        this.id = id;</span>
+<span class="fc" id="L26">    }</span>
+
+    public String getTitle() {
+<span class="fc" id="L29">        return title;</span>
+    }
+
+    public void setTitle(String title) {
+<span class="fc" id="L33">        this.title = title;</span>
+<span class="fc" id="L34">    }</span>
+
+    public String getText() {
+<span class="fc" id="L37">        return text;</span>
+    }
+
+    public void setText(String text) {
+<span class="fc" id="L41">        this.text = text;</span>
+<span class="fc" id="L42">    }</span>
+
+    public String getSummary() {
+<span class="fc" id="L45">        return summary;</span>
+    }
+
+    public void setSummary(String summary) {
+<span class="fc" id="L49">        this.summary = summary;</span>
+<span class="fc" id="L50">    }</span>
+
+    public String getUrl() {
+<span class="fc" id="L53">        return url;</span>
+    }
+
+    public void setUrl(String url) {
+<span class="fc" id="L57">        this.url = url;</span>
+<span class="fc" id="L58">    }</span>
+
+    public String getImage() {
+<span class="fc" id="L61">        return image;</span>
+    }
+
+    public void setImage(String image) {
+<span class="fc" id="L65">        this.image = image;</span>
+<span class="fc" id="L66">    }</span>
+
+    public String getVideo() {
+<span class="fc" id="L69">        return video;</span>
+    }
+
+    public void setVideo(String video) {
+<span class="fc" id="L73">        this.video = video;</span>
+<span class="fc" id="L74">    }</span>
+
+    public String getPublish_date() {
+<span class="fc" id="L77">        return publish_date;</span>
+    }
+
+    public void setPublish_date(String publish_date) {
+<span class="fc" id="L81">        this.publish_date = publish_date;</span>
+<span class="fc" id="L82">    }</span>
+
+    public String getAuthor() {
+<span class="fc" id="L85">        return author;</span>
+    }
+
+    public void setAuthor(String author) {
+<span class="fc" id="L89">        this.author = author;</span>
+<span class="fc" id="L90">    }</span>
+
+    public List&lt;String&gt; getAuthors() {
+<span class="fc bfc" id="L93" title="All 2 branches covered.">        return authors == null ? null : List.copyOf(authors);</span>
+    }
+
+    public void setAuthors(List&lt;String&gt; authors) {
+<span class="fc bfc" id="L97" title="All 2 branches covered.">        this.authors = authors == null ? null : List.copyOf(authors);</span>
+<span class="fc" id="L98">    }</span>
+
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

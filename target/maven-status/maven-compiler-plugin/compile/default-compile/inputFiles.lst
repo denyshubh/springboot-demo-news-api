@@ -1,0 +1,9 @@
+/workspace/src/main/java/com/example/newsapi/NewsApiApplication.java
+/workspace/src/main/java/com/example/newsapi/client/WorldNewsClient.java
+/workspace/src/main/java/com/example/newsapi/config/WebClientConfig.java
+/workspace/src/main/java/com/example/newsapi/config/WorldNewsProperties.java
+/workspace/src/main/java/com/example/newsapi/model/TopNewsCluster.java
+/workspace/src/main/java/com/example/newsapi/model/TopNewsResponse.java
+/workspace/src/main/java/com/example/newsapi/model/WorldNewsItem.java
+/workspace/src/main/java/com/example/newsapi/web/GlobalExceptionHandler.java
+/workspace/src/main/java/com/example/newsapi/web/TopNewsController.java

@@ -1,0 +1,46 @@
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+.mvn/timing.properties
+!.mvn/wrapper/maven-wrapper.jar
+
+# Java
+*.class
+*.log
+*.out
+*.pid
+hs_err_pid*
+replay_pid*
+
+# IDEs and editors
+.idea/
+*.iml
+*.ipr
+*.iws
+.classpath
+.project
+.settings/
+.vscode/
+.history/
+
+# Build outputs
+out/
+build/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Coverage & Reports
+target/site/
+.jacoco/
+.scannerwork/
+.sonar/
+
+# Env files
+.env
+

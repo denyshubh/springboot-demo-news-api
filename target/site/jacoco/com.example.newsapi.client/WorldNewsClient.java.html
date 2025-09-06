@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>WorldNewsClient.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">news-api</a> &gt; <a href="index.source.html" class="el_package">com.example.newsapi.client</a> &gt; <span class="el_source">WorldNewsClient.java</span></div><h1>WorldNewsClient.java</h1><pre class="source lang-java linenums">package com.example.newsapi.client;
+
+import com.example.newsapi.config.WorldNewsProperties;
+import com.example.newsapi.model.TopNewsResponse;
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.stereotype.Component;
+import org.springframework.web.reactive.function.client.WebClient;
+import org.springframework.web.reactive.function.client.WebClientResponseException;
+import reactor.core.publisher.Mono;
+
+import java.time.LocalDate;
+
+@Component
+public class WorldNewsClient {
+
+    private final WebClient webClient;
+    private final WorldNewsProperties properties;
+
+    @SuppressFBWarnings(value = {&quot;EI_EXPOSE_REP2&quot;}, justification = &quot;WebClient and properties are framework-managed beans; safe to store references.&quot;)
+<span class="fc" id="L22">    public WorldNewsClient(WebClient worldNewsWebClient, WorldNewsProperties properties) {</span>
+<span class="fc" id="L23">        this.webClient = worldNewsWebClient;</span>
+<span class="fc" id="L24">        this.properties = properties;</span>
+<span class="fc" id="L25">    }</span>
+
+    public TopNewsResponse getTopNews(String sourceCountry, String language, LocalDate date,
+                                      Boolean headlinesOnly, Integer maxNewsPerCluster) {
+        try {
+<span class="fc" id="L30">            WebClient.RequestHeadersUriSpec&lt;?&gt; uriSpec = webClient.get();</span>
+<span class="fc" id="L31">            WebClient.RequestHeadersSpec&lt;?&gt; headersSpec = uriSpec.uri(uriBuilder -&gt; {</span>
+<span class="fc" id="L32">                var b = uriBuilder</span>
+<span class="fc" id="L33">                        .path(&quot;/top-news&quot;)</span>
+<span class="fc" id="L34">                        .queryParam(&quot;source-country&quot;, sourceCountry)</span>
+<span class="fc" id="L35">                        .queryParam(&quot;language&quot;, language);</span>
+<span class="fc bfc" id="L36" title="All 2 branches covered.">                if (date != null) {</span>
+<span class="fc" id="L37">                    b.queryParam(&quot;date&quot;, date);</span>
+                }
+<span class="fc bfc" id="L39" title="All 2 branches covered.">                if (headlinesOnly != null) {</span>
+<span class="fc" id="L40">                    b.queryParam(&quot;headlines-only&quot;, headlinesOnly);</span>
+                }
+<span class="fc bfc" id="L42" title="All 2 branches covered.">                if (maxNewsPerCluster != null) {</span>
+<span class="fc" id="L43">                    b.queryParam(&quot;max-news-per-cluster&quot;, maxNewsPerCluster);</span>
+                }
+<span class="fc" id="L45">                b.queryParam(&quot;api-key&quot;, properties.getApiKey());</span>
+<span class="fc" id="L46">                return b.build();</span>
+            })
+<span class="fc" id="L48">                    .accept(MediaType.APPLICATION_JSON)</span>
+<span class="fc" id="L49">                    .header(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON_VALUE);</span>
+
+<span class="fc" id="L51">            return headersSpec.retrieve()</span>
+<span class="fc" id="L52">                    .bodyToMono(TopNewsResponse.class)</span>
+<span class="fc" id="L53">                    .onErrorResume(WebClientResponseException.class, ex -&gt; {</span>
+<span class="fc" id="L54">                        return Mono.error(ex);</span>
+                    })
+<span class="fc" id="L56">                    .block();</span>
+<span class="fc" id="L57">        } catch (WebClientResponseException e) {</span>
+<span class="fc" id="L58">            throw e;</span>
+        }
+    }
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

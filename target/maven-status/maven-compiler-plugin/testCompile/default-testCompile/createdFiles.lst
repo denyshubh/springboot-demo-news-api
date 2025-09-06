@@ -1,0 +1,10 @@
+com/example/newsapi/web/GlobalExceptionHandlerTest.class
+com/example/newsapi/client/WorldNewsClientWireMockTest.class
+com/example/newsapi/model/TopNewsClusterTest.class
+com/example/newsapi/NewsApiApplicationTest.class
+com/example/newsapi/model/TopNewsResponseTest.class
+com/example/newsapi/NewsApiMainTest.class
+com/example/newsapi/model/WorldNewsItemBranchesTest.class
+com/example/newsapi/model/WorldNewsItemTest.class
+com/example/newsapi/web/GlobalExceptionHandlerWebClientTest.class
+com/example/newsapi/web/TopNewsControllerTest.class
