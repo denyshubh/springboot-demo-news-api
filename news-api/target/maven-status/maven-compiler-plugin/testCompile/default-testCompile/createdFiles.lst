@@ -1,0 +1,12 @@
+com/example/newsapi/web/GlobalExceptionHandlerMoreTest.class
+com/example/newsapi/service/TopNewsServiceNullBodyTest.class
+com/example/newsapi/config/RestClientConfigTest.class
+com/example/newsapi/client/WorldNewsClientImplTest.class
+com/example/newsapi/web/GlobalExceptionHandlerTest.class
+com/example/newsapi/service/TopNewsServiceBranchesTest.class
+com/example/newsapi/NewsApiApplicationTest.class
+com/example/newsapi/web/GlobalExceptionHandlerValidationBranchTest.class
+com/example/newsapi/web/TopNewsControllerValidationTest.class
+com/example/newsapi/config/WorldNewsPropertiesTest.class
+com/example/newsapi/web/TopNewsControllerTest.class
+com/example/newsapi/service/TopNewsServiceTest.class

@@ -1,0 +1,12 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+news-api,com.example.newsapi.config,WorldNewsProperties,0,20,0,0,0,8,0,5,0,5
+news-api,com.example.newsapi.config,RestClientConfig,0,11,0,0,0,5,0,3,0,3
+news-api,com.example.newsapi.dto,TopNewsResponse.NewsCluster,0,6,0,0,0,1,0,1,0,1
+news-api,com.example.newsapi.dto,TopNewsResponse,0,12,0,0,0,1,0,1,0,1
+news-api,com.example.newsapi.dto,TopNewsResponse.NewsItem,0,33,0,0,0,1,0,1,0,1
+news-api,com.example.newsapi.service,TopNewsService,0,77,0,14,0,17,0,9,0,2
+news-api,com.example.newsapi.web,GlobalExceptionHandler,0,50,0,0,0,11,0,4,0,4
+news-api,com.example.newsapi.web,TopNewsController,0,31,0,0,0,7,0,2,0,2
+news-api,com.example.newsapi.client,WorldNewsClient.TopNewsResult,0,9,0,0,0,1,0,1,0,1
+news-api,com.example.newsapi.client,WorldNewsClientImpl,0,131,0,4,0,24,0,5,0,3
+news-api,com.example.newsapi,NewsApiApplication,0,8,0,0,0,3,0,2,0,2

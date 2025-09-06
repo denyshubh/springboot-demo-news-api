@@ -1,0 +1,12 @@
+/workspace/news-api/src/test/java/com/example/newsapi/NewsApiApplicationTest.java
+/workspace/news-api/src/test/java/com/example/newsapi/client/WorldNewsClientImplTest.java
+/workspace/news-api/src/test/java/com/example/newsapi/config/RestClientConfigTest.java
+/workspace/news-api/src/test/java/com/example/newsapi/config/WorldNewsPropertiesTest.java
+/workspace/news-api/src/test/java/com/example/newsapi/service/TopNewsServiceBranchesTest.java
+/workspace/news-api/src/test/java/com/example/newsapi/service/TopNewsServiceNullBodyTest.java
+/workspace/news-api/src/test/java/com/example/newsapi/service/TopNewsServiceTest.java
+/workspace/news-api/src/test/java/com/example/newsapi/web/GlobalExceptionHandlerMoreTest.java
+/workspace/news-api/src/test/java/com/example/newsapi/web/GlobalExceptionHandlerTest.java
+/workspace/news-api/src/test/java/com/example/newsapi/web/GlobalExceptionHandlerValidationBranchTest.java
+/workspace/news-api/src/test/java/com/example/newsapi/web/TopNewsControllerTest.java
+/workspace/news-api/src/test/java/com/example/newsapi/web/TopNewsControllerValidationTest.java
