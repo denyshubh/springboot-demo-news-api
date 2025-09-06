@@ -36,8 +36,12 @@ class WorldNewsClientWireMockTest {
         properties.setBaseUrl("http://localhost:" + wireMockServer.port());
         properties.setApiKey("test-key");
         properties.setTimeoutMs(3000);
-        WebClient webClient = new WebClientConfig().worldNewsWebClient(properties);
-        return new WorldNewsClient(webClient, properties);
+        try {
+            WebClient webClient = new WebClientConfig().worldNewsWebClient(properties);
+            return new WorldNewsClient(webClient, properties);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Test

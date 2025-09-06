@@ -6,6 +6,7 @@ app:
     base-url: https://api.worldnewsapi.com
     api-key: ${WORLDNEWS_API_KEY:dummy}
     timeout-ms: 5000
+    skip-ssl-validation: true  # Set to false for production
 
 spring:
   main:

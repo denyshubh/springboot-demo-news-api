@@ -50,9 +50,6 @@ public class WorldNewsClient {
 
             return headersSpec.retrieve()
                     .bodyToMono(TopNewsResponse.class)
-                    .onErrorResume(WebClientResponseException.class, ex -> {
-                        return Mono.error(ex);
-                    })
                     .block();
         } catch (WebClientResponseException e) {
             throw e;

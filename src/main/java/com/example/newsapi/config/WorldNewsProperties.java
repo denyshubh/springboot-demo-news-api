@@ -8,6 +8,7 @@ public class WorldNewsProperties {
     private String baseUrl;
     private String apiKey;
     private int timeoutMs = 5000;
+    private boolean skipSslValidation = false;
 
     public String getBaseUrl() {
         return baseUrl;
@@ -31,6 +32,14 @@ public class WorldNewsProperties {
 
     public void setTimeoutMs(int timeoutMs) {
         this.timeoutMs = timeoutMs;
+    }
+
+    public boolean isSkipSslValidation() {
+        return skipSslValidation;
+    }
+
+    public void setSkipSslValidation(boolean skipSslValidation) {
+        this.skipSslValidation = skipSslValidation;
     }
 }
 
