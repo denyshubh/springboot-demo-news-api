@@ -14,14 +14,19 @@ A lightweight Spring Boot wrapper over the WorldNews Top News endpoint.
 - Java 17+
 - Maven 3.9+
 
-2) Configure API key
+2) Build the project
+```bash
+mvn clean compile
+```
+
+3) Configure API key
 
 Export your WorldNews API key (get one from their docs/console):
 ```bash
 export WORLDNEWS_API_KEY=YOUR_KEY
 ```
 
-3) Run the app
+4) Run the app
 ```bash
 mvn spring-boot:run
 ```
